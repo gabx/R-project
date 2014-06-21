@@ -1,4 +1,4 @@
 r-project
 =========
 
-My r-project stuff
+My R-project stuff
