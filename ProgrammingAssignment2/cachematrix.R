@@ -1,7 +1,7 @@
 
 # function to create a matrix, set/get its value and set/get its inverse 
 # with the solve() function. 
-# We assume the matrix is inversible
+# We will assume the matrix is inversible
 
 makeCacheMatrix <- function(x = matrix()) {
     
