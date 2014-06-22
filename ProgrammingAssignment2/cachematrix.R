@@ -1,19 +1,17 @@
 
 # function to set/get the value of a matrix and set/get its inverse 
 # with the solve() function, as a list of functions.
-# We will assume the matrix is inversible (i.e nrow=ncol)
 # This kind of functions are called "constructor".
 
 makeCacheMatrix <- function(x = matrix()) {
     
-    # create a new env with empty parent. This avoid inherit unwanted objects
-    my_env <- new.env(parent = emptyenv())
-    # store variable s in my_env & bind it to NULL
-    my_env$s <- NULL
-
+    # assign NULL to s
+    s <- NULL
     
     set <- function(y){
         # this fun assign y to x & NULL to s
+        # NB: the use of <<- . This operator is used in functions & cause a 
+        # search through parent environments for an existing definition.
         x <<- y
         s <<- NULL 
     }
@@ -21,18 +19,41 @@ makeCacheMatrix <- function(x = matrix()) {
     # return x
     get <- function() x
     
-    setsolve <- function(solve) s <<- solve
+    set.solve <- function(solve) s <<- solve
     
     # return y, inverse of x
-    getsolve <- function() i
+    get.solve <- function() s
  
-    list(set = set, get = get, setsolve = setsolve, getsolve = getsolve)
+    # return our list of functions
+    list(set = set, get = get, set.solve = set.solve, get.solve = get.solve)
 
 }
 
 
-## Write a short comment describing this function
-
+# function to calculate the inverse of the matrix created with makeCacheMatrix().
+# This fun will first test if inverse has already being calculated and if true
+# will reuse inverse from cache.
+# We will assume the matrix is inversible (i.e nrow=ncol)
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
+
+    
+    s <- x$get.solve()
+    
+    # test if i already computed and shout message
+    if(!is.null(s)) {
+    message("inverse has already be calclated\n", "getting result from cache")
+        return(s)          
+    }
+    
+    # Case result not already computed
+    
+    # get matrix
+    mat <- x$get()
+    
+    # inverse the matrix
+    s <- solve(mat, ...)
+    
+    # set result
+    x$set.solve(s)
+    s
 }
