@@ -1,0 +1,148 @@
+\documentclass[fontsize=12pts,BCOR=8.25mm]{scrartcl} %use KOMA-script 
+\KOMAoptions{DIV=15} % the larger this number,the larger the text block and the smallest the margins 
+
+\usepackage[utf8]{inputenc}
+\usepackage[english=nohyphenation]{hyphsubst}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{libertine}
+\usepackage{pifont}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{listings} % write code in nice layout
+\usepackage{paralist} %for the environment compactitem with less space between items
+\usepackage{hyperref} %manage hyperlinks
+\usepackage{listings} % insert code
+\usepackage{booktabs} % better looking tables
+\usepackage{enumitem} % powerfull for enumeration
+
+%%%%%%%%% TITLE %%%%%%%%%%%%%
+
+\newcommand*{\titleGP}{\begingroup % Create the command for including the title page in the document
+\centering % Center all text
+\vspace*{\baselineskip} % White space at the top of the page
+{\begingroup
+\color{mydarkgreen}
+\rule{\textwidth}{1.6pt}\vspace*{-\baselineskip}\vspace*{2pt} % Thick horizontal line
+\rule{\textwidth}{0.4pt}\\[\baselineskip] % Thin horizontal line
+
+{\Huge Codebook}\\[0.2\baselineskip] % Title
+
+\rule{\textwidth}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt} % Thin horizontal line
+\rule{\textwidth}{1.6pt}\\[\baselineskip] % Thick horizontal line
+
+ {\large \bfseries Human Activity Recognition Using Smartphones Dataset}
+\vspace*{2\baselineskip} 
+
+\today
+\endgroup}
+
+\vfill % Whitespace between editor names and publisher logo
+
+{\large
+\begin{description}
+\item [Version:] 1.0
+\item [Author:]Arnaud Gaboury 
+\end{description}}
+
+\endgroup}
+
+\title {Codebook}
+\author{Arno Gaboury}
+\date{}
+
+%%%%% CUSTOMIZATION %%%%%%%%
+% colors %
+\definecolor{myblue}{HTML}{31495B}
+\definecolor{mygreen}{HTML}{00FF00}
+\definecolor{mydarkgreen}{HTML}{004200}
+\definecolor{myblack}{HTML}{161616}
+\definecolor{mylightgrey}{HTML}{E0E0E0}
+\definecolor{mylightred}{HTML}{F50031}
+% hyperlinks %
+\hypersetup{
+  colorlinks = true,   
+  linkcolor = myblue, 
+  citecolor = myblue,  
+  urlcolor = myblue,  
+}
+
+% environment %
+\newenvironment{NoIntend}%
+{\noindent\ignorespaces}%
+{\par\noindent%
+\ignorespacesafterend}
+
+\newenvironment{SmallBox}
+{ \rule{1ex}{1ex}\hspace{\stretch{1}} }
+{ \hspace{\stretch{1}}\rule{1ex}{1ex} }
+% item list spacing
+
+\let\itemize\compactitem
+  \let\enditemize\endcompactitem
+  \let\enumerate\compactenum
+  \let\endenumerate\endcompactenum
+  \let\description\compactdesc
+  \let\enddescription\endcompactdesc
+  \pltopsep=\medskipamount
+  \plitemsep=1pt
+  \plparsep=1pt
+  
+  %%%% GENERAL PRESENTATION %%%%
+
+\linespread{1.1}
+\usepackage[    % Improves general appearance
+activate = true, % protrusion
+expansion = true,
+tracking = true,
+kerning = true,
+letterspace = 50, % well spaced smallcaps % avoid blur 
+shrink = 10,
+babel = true,
+stretch = 10]{microtype}    
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\titleGP
+\clearpage
+
+\tableofcontents
+\clearpage
+
+%%%%%%%%%%%%%%%%%
+\section{\texorpdfstring{\color{mydarkgreen}{General Information}}{}}
+
+\subsection{Test conditions}
+
+
+The experiments have been carried out with a group of 30 volunteers within an
+age bracket of 19-48 years. Each person performed six activities: 
+
+\begin{itemize}
+\item WALKING
+\item WALKING\_UPSTAIRS
+\item SITTING
+\item STANDING
+\item LAYING
+\end{itemize}
+They all were wearing a smartphone Samsung Galaxy S II on the waist.\\
+
+
+
+Using its embedded accelerometer and gyroscope, we captured 3-axial 
+linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. 
+The experiments have been video-recorded to label the data manually. The 
+obtained dataset has been randomly partitioned into two sets, where 70\% 
+of the volunteers was selected for generating the training data and 30\%
+the test data. \\
+
+
+\subsection{Test record}
+
+
+\section{\texorpdfstring{\color{mydarkgreen}{Coding guidelines}}{}}
+\section{\texorpdfstring{\color{mydarkgreen}{Major Topic Codes}}{}}
+
+
+\end{document}

@@ -1,0 +1,13 @@
+\documentclass{article}
+
+\title {Codebook}
+\author{Arno Gaboury}
+\date{}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+
+
+
+\end{document}
