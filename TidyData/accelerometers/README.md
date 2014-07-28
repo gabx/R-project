@@ -4,16 +4,10 @@
 This project is part of coursera "Getting and Cleaning Data". This is a peer
 assignment.
 
-This whole project has been built using [ProjectTemplate](http://projecttemplate.
-net/index.html) and [Rstudio](http://www.rstudio.com/). 
-This document has been writen using [R Markdown v2](http://rmarkdown.
-rstudio.com/), a **R** format that enables easy creation of dynamic documents.
+This whole project has been built using [ProjectTemplate](http://projecttemplate.net)
+ and [Rstudio](http://www.rstudio.com/). 
 
-The *codeBook.pdf* has been writed using [Knitr](https://support.rstudio.com/hc/
-en-us/articles/200552056-Using-Sweave-and-knitr).
-
-This github repository is synced using [Rstudio with Git](https://support.rstudio.com/
-hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN)
+The *codeBook.pdf* has been writed using [Knitr](http://yihui.name/knitr/).
 
 
 ## The Accelerometer project
@@ -30,14 +24,17 @@ Please find below more info and how to load & deploy the project.
 
 
 ## A quick note about ProjectTemplate
-[ProjectTemplate](http://projecttemplate.
-net/index.html) is an R package that helps you organize your statistical
+[ProjectTemplate](http://projecttemplate.net)
+is an R package that helps you organize your statistical
 analysis projects. The package will automate parts of your data analysis project:
 
 * Organizing the files in your project.
 * Loading all the R packages you’ll use.
 * Loading all of your data sets into memory.
 * Munging and preprocessing your data into a form that’s suitable for analysis.
+
+### How it works
+
 
 
 
