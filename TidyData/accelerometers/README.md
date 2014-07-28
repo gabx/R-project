@@ -22,6 +22,14 @@ the data and any work done to perform the data cleaning process.
 Please find below more info and how to load & deploy the project.
 
 
+## HOW-TO
+```
+$ git clone https://github.com/gabx/r-project
+$ R
+R> setwd(path/to/TidyData)
+R> library('ProjectTemplate')
+R> load.project()
+```
 
 ## A quick note about ProjectTemplate
 [ProjectTemplate](http://projecttemplate.net)
