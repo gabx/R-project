@@ -1,4 +1,4 @@
 # Ignore in this directory
-empty.txt
+# empty.txt
 # Except this file
-!.gitignore
+# !.gitignore
