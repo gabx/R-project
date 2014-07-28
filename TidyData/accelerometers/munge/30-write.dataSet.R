@@ -2,7 +2,7 @@
 
 cat('\nWriting Tidy Data to .csv file')
 
-setwd('../')
+# setwd('../')
 
 write.csv(my.result1,'Mean_Std_per_activity.csv')
 
@@ -13,8 +13,12 @@ in the Data directory')
         
     
 # write codebook
-# create .tex file
+cat('\nWriting the codebook pdf')
 
-# knit2pdf('codebook.Rnw')
+knit2pdf('munge/codebook.Rnw','doc/codebook.tex')
+
+cat('\nPlease find codebook.pdf in the doc directory.\
+Everything is done. Exiting the project !')
+
 
 
