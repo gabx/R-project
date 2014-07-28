@@ -77,6 +77,17 @@ my.data.set <- cbind(subject, my.result1)
 my.df <- melt(my.data.set, id = c('Activity', 'Subject.ID'))
 my.result2 <- dcast(my.df, Activity + Subject.ID ~ variable, mean)
 
+
+# caching results
+cache('x.training.dt')
+cache('y.training.dt')
+cache('x.test.dt')
+cache('y.test.dt')
+cache('training.subject.dt')
+cache('test.subject.dt')
+cache('features.dt')
+cache('activity.dt')
+
 setwd('../..')
 
 cat('\nTidy Data are now set')
