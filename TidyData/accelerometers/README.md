@@ -23,10 +23,10 @@ find:
 * two tidy data sets as *.csv* files in the **data** directory
 * one code book *codeBook.pdf* in the **doc** directory. It describes the variables, 
 the data and any work done to perform the data cleaning process. 
+* one `run_analysis.R` in the *src* directory
 
-The script `run_analysis.R` does not exist, as the ProjectTample package manages
-every step of the data tidy process. Please find below more info and how to load
-& deploy the project.
+Please find below more info and how to load & deploy the project.
+
 
 
 ## A quick note about ProjectTemplate
