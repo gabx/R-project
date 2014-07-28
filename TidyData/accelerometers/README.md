@@ -34,6 +34,22 @@ analysis projects. The package will automate parts of your data analysis project
 * Munging and preprocessing your data into a form that’s suitable for analysis.
 
 ### How it works
+```
+$ mkdir MyProject
+$ R
+R> setwd(path/to/MyProject)
+R> library('ProjectTemplate')
+R> load.project()
+```
+This above commands will create the whole directory structure for your project.
+
+Most important folders:
+
+* ***config*** : the **global.dcf** configuration file inside
+* ***munge*** : this directory will contains every processing scripts. All the 
+code is stored here. The scripts will be exectuded sequentially when running 
+`load.project()`.
+* ***src*** : here is stored the final analysis script.
 
 
 
