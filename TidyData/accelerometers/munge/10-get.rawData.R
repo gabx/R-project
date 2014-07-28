@@ -6,7 +6,7 @@ cat('\nDownloading and unzipping data.Please wait')
 
 download.file(readLines('./DataSet.url'), destfile = './data/DataSet.zip', 
               method='curl')
-DataSet <- unzip('./data/DataSet.zip')
+# DataSet <- unzip('./data/DataSet.zip')
 unzip('./data/DataSet.zip', exdir = './data')
 file.remove('./data/DataSet.zip')
 
