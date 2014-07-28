@@ -10,7 +10,12 @@ This document has been writen using [R Markdown v2](http://rmarkdown.
 rstudio.com/), a **R** format that enables easy creation of dynamic documents.
 
 The *codeBook.pdf* has been writed using [Knitr](https://support.rstudio.com/hc/
-en-us/articles/200552056-Using-Sweave-and-knitr)
+en-us/articles/200552056-Using-Sweave-and-knitr).
+
+This github repository is synced using [Rstudio with Git](https://support.rstudio.com/
+hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN)
+
+
 
 
 ### A quick note about ProjectTemplate
