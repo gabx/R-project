@@ -9,6 +9,9 @@ net/index.html) and [Rstudio](http://www.rstudio.com/).
 This document has been writen using [R Markdown v2](http://rmarkdown.
 rstudio.com/), a **R** format that enables easy creation of dynamic documents.
 
+The *codeBook.pdf* has been writed using [Knitr](https://support.rstudio.com/hc/
+en-us/articles/200552056-Using-Sweave-and-knitr)
+
 
 ### A quick note about ProjectTemplate
 [ProjectTemplate](http://projecttemplate.
@@ -25,8 +28,8 @@ analysis projects. The package will automate parts of your data analysis project
 The goal is to prepare tidy data that can be used for later analysis. You will 
 find:
 
-* one tidy data set 
-* one **R** script called `run_analysis().R` 
-* one code book `CodeBook.Rmd` describing the variables, the data and any work done 
-to perform the
-data cleaning process
+* two tidy data set as *.csv* files in the **data** directory
+* one code book *codeBook.pdf* in the **doc** directory. It describes the variables, 
+the data and any work done to perform the data cleaning process. 
+
+
