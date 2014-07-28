@@ -6,5 +6,5 @@ logging: on
 load_libraries: on
 libraries: reshape, plyr, ggplot2, stringr, lubridate, reshape2
 as_factors: on
-data_tables: off
+data_tables: on
 
