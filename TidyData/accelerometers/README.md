@@ -16,9 +16,20 @@ This github repository is synced using [Rstudio with Git](https://support.rstudi
 hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN)
 
 
+## The Accelerometer project
+The goal is to prepare tidy data that can be used for later analysis. You will 
+find:
+
+* two tidy data sets as *.csv* files in the **data** directory
+* one code book *codeBook.pdf* in the **doc** directory. It describes the variables, 
+the data and any work done to perform the data cleaning process. 
+
+The script `run_analysis.R` does not exist, as the ProjectTample package manages
+every step of the data tidy process. Please find below more info and how to load
+& deploy the project.
 
 
-### A quick note about ProjectTemplate
+## A quick note about ProjectTemplate
 [ProjectTemplate](http://projecttemplate.
 net/index.html) is an R package that helps you organize your statistical
 analysis projects. The package will automate parts of your data analysis project:
@@ -29,12 +40,7 @@ analysis projects. The package will automate parts of your data analysis project
 * Munging and preprocessing your data into a form that’s suitable for analysis.
 
 
-## The Accelerometer project
-The goal is to prepare tidy data that can be used for later analysis. You will 
-find:
 
-* two tidy data sets as *.csv* files in the **data** directory
-* one code book *codeBook.pdf* in the **doc** directory. It describes the variables, 
-the data and any work done to perform the data cleaning process. 
+
 
 
