@@ -1,12 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Arch Linux) (format=pdflatex 2014.5.4)  27 JUL 2014 18:59
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Arch Linux) (format=pdflatex 2014.5.4)  28 JUL 2014 12:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**codebook.tex
-(./codebook.tex
-LaTeX2e <2011/06/27>
-Babel <3.9h> and hyphenation patterns for 78 languages loaded.
-(/usr/share/texmf-dist/tex/latex/koma-script/scrartcl.cls
+**\nonstopmode \input ./codebook.tex
+(./codebook.tex (/usr/share/texmf-dist/tex/latex/koma-script/scrartcl.cls
 Document Class: scrartcl 2013/12/19 v3.12 KOMA-Script document class (article)
 (/usr/share/texmf-dist/tex/latex/koma-script/scrkbase.sty
 Package: scrkbase 2013/12/19 v3.12 KOMA-Script package (KOMA-Script-dependent b
@@ -89,6 +86,52 @@ Package typearea Info: These are the values describing the layout:
 \c@figure=\count86
 \c@table=\count87
 \bibindent=\dimen102
+) (/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/share/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/share/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count88
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/usr/share/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(/usr/share/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+)
+(/usr/share/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip48
+\fb@frw=\dimen105
+\fb@frh=\dimen106
+\FrameRule=\dimen107
+\FrameSep=\dimen108
+)
+(/usr/share/texmf-dist/tex/latex/base/alltt.sty
+Package: alltt 1997/06/16 v2.0g defines alltt environment
 )
 Package typearea Info: These are the values describing the layout:
 (typearea)             DIV  = 15
@@ -106,15 +149,16 @@ Package typearea Info: These are the values describing the layout:
 (typearea)              \topskip        = 12.0pt
 (typearea)              \footskip       = 50.75pt
 (typearea)              \baselineskip   = 14.5pt
-(typearea)              on input line 2.
+(typearea)              on input line 51.
 Package scrbase Info: Unknown processing state.
 (scrbase)             Processing option `DIV=15'
 (scrbase)             of member `.typearea.sty'
 (scrbase)             of family `KOMA'
 (scrbase)             doesn't set a valid state.
 (scrbase)             This will be interpreted
-(scrbase)             as \FamilyKeyStateProcessed on input line 2.
- (/usr/share/texmf-dist/tex/latex/base/inputenc.sty
+(scrbase)             as \FamilyKeyStateProcessed on input line 51.
+
+(/usr/share/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks15
 \inpenc@posthook=\toks16
@@ -333,10 +377,6 @@ Now handling font encoding U ...
 ))
 (/usr/share/texmf-dist/tex/generic/oberdiek/hyphsubst.sty
 Package: hyphsubst 2008/06/09 v0.2 Substitute hyphenation patterns (HO)
-
-(/usr/share/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
-)
 Package hyphsubst Info: Redefined: \l@english
 (hyphsubst)             old value: 0
 (hyphsubst)             new value: 2
@@ -350,8 +390,8 @@ Language: english 2012/08/20 v3.3p English support from the babel system
 
 (/usr/share/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2013/12/03 3.9h Babel common definitions
-\babel@savecnt=\count88
-\U@D=\dimen103
+\babel@savecnt=\count89
+\U@D=\dimen109
 )
 \l@canadian = a dialect from \language\l@american 
 \l@australian = a dialect from \language\l@british 
@@ -381,7 +421,7 @@ Package: xkeyval 2012/10/14 v2.6b package option processing (HA)
 (/usr/share/texmf-dist/tex/generic/xkeyval/xkeyval.tex
 \XKV@toks=\toks17
 \XKV@tempa@toks=\toks18
-\XKV@depth=\count89
+\XKV@depth=\count90
 File: xkeyval.tex 2012/10/14 v2.6b key=value parser (HA)
 ))
 (/usr/share/texmf-dist/tex/latex/base/textcomp.sty
@@ -580,15 +620,7 @@ Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
-
-(/usr/share/texmf-dist/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
-
-(/usr/share/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
-)
-\Gread@gobject=\count90
-)
+LaTeX Info: Redefining \color on input line 702.
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
 Package xcolor Info: Model `RGB' extended on input line 1353.
@@ -599,36 +631,19 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 )
-(/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
-
-(/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
-
-(/usr/share/texmf-dist/tex/latex/graphics/trig.sty
-Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
-)
-(/usr/share/texmf-dist/tex/latex/latexconfig/graphics.cfg
-File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
-)
-Package graphics Info: Driver file: pdftex.def on input line 91.
-)
-\Gin@req@height=\dimen104
-\Gin@req@width=\dimen105
-)
 (/usr/share/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count91
 \lst@gtempboxa=\box27
 \lst@token=\toks19
 \lst@length=\count92
-\lst@currlwidth=\dimen106
+\lst@currlwidth=\dimen110
 \lst@column=\count93
 \lst@pos=\count94
-\lst@lostspace=\dimen107
-\lst@width=\dimen108
+\lst@lostspace=\dimen111
+\lst@width=\dimen112
 \lst@newlines=\count95
 \lst@lineno=\count96
-\lst@maxwidth=\dimen109
+\lst@maxwidth=\dimen113
 
 (/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
@@ -643,10 +658,10 @@ Package: listings 2013/08/26 1.5b (Carsten Heinz)
 
 (/usr/share/texmf-dist/tex/latex/paralist/paralist.sty
 Package: paralist 2013/06/09 v2.4 Extended list environments
-\pltopsep=\skip48
-\plpartopsep=\skip49
-\plitemsep=\skip50
-\plparsep=\skip51
+\pltopsep=\skip49
+\plpartopsep=\skip50
+\plitemsep=\skip51
+\plparsep=\skip52
 \pl@lab=\toks20
 )
 (/usr/share/texmf-dist/tex/latex/hyperref/hyperref.sty
@@ -702,7 +717,7 @@ Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 (/usr/share/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
-\@linkdim=\dimen110
+\@linkdim=\dimen114
 \Hy@linkcounter=\count99
 \Hy@pagecounter=\count100
 
@@ -730,10 +745,10 @@ Package hyperref Info: Bookmarks ON on input line 4688.
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5041.
-\XeTeXLinkMargin=\dimen111
+\XeTeXLinkMargin=\dimen115
 \Fld@menulength=\count103
-\Field@Width=\dimen112
-\Fld@charsize=\dimen113
+\Field@Width=\dimen116
+\Fld@charsize=\dimen117
 Package hyperref Info: Hyper figures OFF on input line 6295.
 Package hyperref Info: Link nesting OFF on input line 6300.
 Package hyperref Info: Hyper index ON on input line 6303.
@@ -760,44 +775,44 @@ Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
-\Hy@SectionHShift=\skip52
+\Hy@SectionHShift=\skip53
 )
 (/usr/share/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
-\heavyrulewidth=\dimen114
-\lightrulewidth=\dimen115
-\cmidrulewidth=\dimen116
-\belowrulesep=\dimen117
-\belowbottomsep=\dimen118
-\aboverulesep=\dimen119
-\abovetopsep=\dimen120
-\cmidrulesep=\dimen121
-\cmidrulekern=\dimen122
-\defaultaddspace=\dimen123
+\heavyrulewidth=\dimen118
+\lightrulewidth=\dimen119
+\cmidrulewidth=\dimen120
+\belowrulesep=\dimen121
+\belowbottomsep=\dimen122
+\aboverulesep=\dimen123
+\abovetopsep=\dimen124
+\cmidrulesep=\dimen125
+\cmidrulekern=\dimen126
+\defaultaddspace=\dimen127
 \@cmidla=\count109
 \@cmidlb=\count110
-\@aboverulesep=\dimen124
-\@belowrulesep=\dimen125
+\@aboverulesep=\dimen128
+\@belowrulesep=\dimen129
 \@thisruleclass=\count111
 \@lastruleclass=\count112
-\@thisrulewidth=\dimen126
+\@thisrulewidth=\dimen130
 )
 (/usr/share/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2011/09/28 v3.5.2 Customized lists
-\labelindent=\skip53
-\enit@outerparindent=\dimen127
+\labelindent=\skip54
+\enit@outerparindent=\dimen131
 \enit@toks=\toks21
 \enit@inbox=\box29
 \enitdp@description=\count113
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 68.
+Package hyperref Info: Option `colorlinks' set `true' on input line 119.
 
 (/usr/share/texmf-dist/tex/latex/microtype/microtype.sty
 Package: microtype 2013/05/23 v2.5a Micro-typographical refinements (RS)
 \MT@toks=\toks22
 \MT@count=\count114
 LaTeX Info: Redefining \textls on input line 766.
-\MT@outer@kern=\dimen128
+\MT@outer@kern=\dimen132
 LaTeX Info: Redefining \textmicrotypecontext on input line 1285.
 \MT@listname@count=\count115
 
@@ -806,61 +821,63 @@ File: microtype-pdftex.def 2013/05/23 v2.5a Definitions specific to pdftex (RS)
 
 LaTeX Info: Redefining \lsstyle on input line 915.
 LaTeX Info: Redefining \lslig on input line 915.
-\MT@outer@space=\skip54
+\MT@outer@space=\skip55
 )
 Package microtype Info: Loading configuration file microtype.cfg.
 
 (/usr/share/texmf-dist/tex/latex/microtype/microtype.cfg
 File: microtype.cfg 2013/05/23 v2.5a microtype main configuration file (RS)
-)) (./codebook.aux)
+))
+(/usr/share/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+) (./codebook.aux)
 \openout1 = `codebook.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 105.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 105.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 157.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 157.
 
 
 (/usr/share/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
 LaTeX Font Info:    Try loading font information for T1+LinuxLibertineT-TLF on 
-input line 105.
+input line 157.
 
 (/usr/share/texmf-dist/tex/latex/libertine/T1LinuxLibertineT-TLF.fd
 File: T1LinuxLibertineT-TLF.fd 2012/11/26 (autoinst) Font definitions for T1/Li
 nuxLibertineT-TLF.
 )
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 105.
-\c@mv@tabular=\count116
-\c@mv@boldtabular=\count117
+(Font)              scaled to size 12.0pt on input line 157.
 
 (/usr/share/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count118
-\scratchdimen=\dimen129
+\scratchcounter=\count116
+\scratchdimen=\dimen133
 \scratchbox=\box30
-\nofMPsegments=\count119
-\nofMParguments=\count120
+\nofMPsegments=\count117
+\nofMParguments=\count118
 \everyMPshowfont=\toks23
-\MPscratchCnt=\count121
-\MPscratchDim=\dimen130
-\MPnumerator=\count122
-\makeMPintoPDFobject=\count123
+\MPscratchCnt=\count119
+\MPscratchDim=\dimen134
+\MPnumerator=\count120
+\makeMPintoPDFobject=\count121
 \everyMPtoPDFconversion=\toks24
 ) (/usr/share/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
@@ -877,9 +894,11 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
+\c@mv@tabular=\count122
+\c@mv@boldtabular=\count123
 \c@lstlisting=\count124
 \AtBeginShipoutBox=\box31
-Package hyperref Info: Link coloring ON on input line 105.
+Package hyperref Info: Link coloring ON on input line 157.
 
 (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -889,15 +908,15 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count125
 )
-LaTeX Info: Redefining \ref on input line 105.
-LaTeX Info: Redefining \pageref on input line 105.
-LaTeX Info: Redefining \nameref on input line 105.
+LaTeX Info: Redefining \ref on input line 157.
+LaTeX Info: Redefining \pageref on input line 157.
+LaTeX Info: Redefining \nameref on input line 157.
 
 (./codebook.out) (./codebook.out)
 \@outlinefile=\write3
 \openout3 = `codebook.out'.
 
-LaTeX Info: Redefining \microtypecontext on input line 105.
+LaTeX Info: Redefining \microtypecontext on input line 157.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -915,20 +934,20 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 24.88pt on input line 107.
+(Font)              scaled to size 24.88pt on input line 161.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 14.4pt on input line 107.
+(Font)              scaled to size 14.4pt on input line 161.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 14.4pt on input line 107.
+(Font)              scaled to size 14.4pt on input line 161.
 LaTeX Font Info:    Try loading font information for T1+LinuxBiolinumT-TLF on i
-nput line 107.
+nput line 161.
 
 (/usr/share/texmf-dist/tex/latex/libertine/T1LinuxBiolinumT-TLF.fd
 File: T1LinuxBiolinumT-TLF.fd 2012/11/26 (autoinst) Font definitions for T1/Lin
 uxBiolinumT-TLF.
 )
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 14.4pt on input line 107.
+(Font)              scaled to size 14.4pt on input line 161.
 Package microtype Info: Loading generic settings for font family
 (microtype)             `LinuxBiolinumT-TLF' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
@@ -936,28 +955,28 @@ Package microtype Info: Loading generic settings for font family
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/bx/n' in size <14.4> not 
 available
 (Font)              Font shape `T1/LinuxBiolinumT-TLF/b/n' tried instead on inp
-ut line 107.
+ut line 161.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
-(Font)              scaled to size 14.4pt on input line 107.
+(Font)              scaled to size 14.4pt on input line 161.
  [1
 
 {/usr/share/texmf-dist/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 110.
+(Font)              scaled to size 12.0pt on input line 164.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/bx/n' in size <12> not av
 ailable
 (Font)              Font shape `T1/LinuxBiolinumT-TLF/b/n' tried instead on inp
-ut line 110.
+ut line 164.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
-(Font)              scaled to size 12.0pt on input line 110.
+(Font)              scaled to size 12.0pt on input line 164.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/bx/n' in size <17.28> not
  available
 (Font)              Font shape `T1/LinuxBiolinumT-TLF/b/n' tried instead on inp
-ut line 110.
+ut line 164.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
-(Font)              scaled to size 17.28pt on input line 110.
-Package tocbasic Info: character protrusion at toc deactivated on input line 11
-0.
+(Font)              scaled to size 17.28pt on input line 164.
+Package tocbasic Info: character protrusion at toc deactivated on input line 16
+4.
  (./codebook.toc
 (/usr/share/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
@@ -977,55 +996,55 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 ]
 LaTeX Font Info:    Try loading font information for TS1+LinuxLibertineT-TLF on
- input line 123.
+ input line 177.
 
 (/usr/share/texmf-dist/tex/latex/libertine/TS1LinuxLibertineT-TLF.fd
 File: TS1LinuxLibertineT-TLF.fd 2012/11/26 (autoinst) Font definitions for TS1/
 LinuxLibertineT-TLF.
 )
 LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 123.
+(Font)              scaled to size 12.0pt on input line 177.
 Package microtype Info: Loading generic settings for font family
 (microtype)             `LinuxLibertineT-TLF' (encoding: TS1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Underfull \hbox (badness 10000) in paragraph at lines 129--130
+Underfull \hbox (badness 10000) in paragraph at lines 183--184
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 133--139
+Underfull \hbox (badness 10000) in paragraph at lines 187--193
 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 149.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 202.
 [3
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 149.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 202.
  (./codebook.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 149.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 149.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 202.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 202.
 Package rerunfilecheck Info: File `codebook.out' has not changed.
-(rerunfilecheck)             Checksum: 1C4F93706F1F21A996EC937303802D66;233.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 149.
+(rerunfilecheck)             Checksum: A9ACC8220FE84B8B2687D85965D7F948;229.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 202.
  ) 
 Here is how much of TeX's memory you used:
- 12743 strings out of 493308
- 202497 string characters out of 6143617
- 350519 words of memory out of 5000000
- 15968 multiletter control sequences out of 15000+600000
+ 12862 strings out of 493308
+ 204372 string characters out of 6143617
+ 352788 words of memory out of 5000000
+ 16072 multiletter control sequences out of 15000+600000
  57688 words of font info for 63 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 51i,7n,60p,322b,452s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 51i,7n,60p,339b,452s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/libertine/lbtn_naooyc.enc}{/usr/share/
 texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc}{/usr/share/texmf-dist/fon
 ts/enc/dvips/libertine/lbtn_nh77jq.enc}{/usr/share/texmf-dist/fonts/enc/dvips/l
 ibertine/lbtn_76gpa5.enc}</usr/share/texmf-dist/fonts/type1/public/libertine/Li
 nBiolinumTB.pfb></usr/share/texmf-dist/fonts/type1/public/libertine/LinLibertin
 eT.pfb></usr/share/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb>
-Output written on codebook.pdf (3 pages, 219462 bytes).
+Output written on codebook.pdf (3 pages, 219483 bytes).
 PDF statistics:
  68 PDF objects out of 1000 (max. 8388607)
  59 compressed objects within 1 object stream

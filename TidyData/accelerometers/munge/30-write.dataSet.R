@@ -12,3 +12,9 @@ cat('\nPlease find Mean_Std_per_activity.csv & Mean_Std_per_activity.csv
 in the Data directory')
         
     
+# write codebook
+# create .tex file
+
+# knit2pdf('codebook.Rnw')
+
+
