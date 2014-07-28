@@ -48,7 +48,7 @@ Most important folders:
 * ***config*** : the **global.dcf** configuration file inside
 * ***munge*** : this directory will contains every processing scripts. All the 
 code is stored here. The scripts will be exectuded sequentially when running 
-`load.project()`.
+`load.project()`. Best is then to name it with digits first.
 * ***src*** : here is stored the final analysis script.
 
 
