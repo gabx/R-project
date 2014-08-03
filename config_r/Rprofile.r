@@ -12,7 +12,7 @@ library(utils)
 .First <- function() 
     {	
 #print a Welcome message
-cat("Welcome back ", Sys.getenv("USER"),"!\n","working directory is:", getwd())
+cat("Welcome back", Sys.getenv("USER"),"\nworking directory is:", getwd())
 # source helpers
 source(Sys.getenv('R_HELPERS'))
 }
