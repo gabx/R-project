@@ -12,7 +12,7 @@ library(utils)
 .First <- function() 
     {	
 #print a Welcome message
-message("Welcome back ", Sys.getenv("USER"),"!\n","working directory is:", getwd())
+cat("Welcome back ", Sys.getenv("USER"),"!\n","working directory is:", getwd())
 # source helpers
 source(Sys.getenv('R_HELPERS'))
 }
@@ -52,7 +52,7 @@ if (interactive()) {
 	if(interactive()) try(savehistory("/developement/language/r/R.Rhistory"))
 	file.append("/developement/language/r/R.Rhistory_old","/developement/language/r/R.Rhistory")
 	file.rename("/developement/language/r/R.Rhistory_old","/developement/language/r/R.Rhistory")
-	cat(paste(c('Goodbye', Sys.info()["user"], date(), sep = ' ')))
+	cat('Goodbye', Sys.info()["user"], date())
 }
 
 
