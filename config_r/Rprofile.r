@@ -9,10 +9,10 @@ options(prompt=paste(paste (Sys.info () [c ("user", "nodename")], collapse="@"),
 # load packages
 library(utils)
 
+cat("Welcome back", Sys.getenv("USER"),"\nworking directory is:", getwd(),'\n')
+
 .First <- function() 
     {	
-#print a Welcome message
-cat("Welcome back", Sys.getenv("USER"),"\nworking directory is:", getwd(),'\n')
 # source helpers
 source(Sys.getenv('R_HELPERS'))
 }
