@@ -1,0 +1,19 @@
+# $R_ENVIRON_USER
+# $XDG_HOME_CONFIG/r/Renviron                                           
+# Last modified: 2014-05-30
+
+R_HOME_USER=/home/gabx/.config/r
+R_LIBS_USER=/developement/language/r/library
+R_HISTFILE=/developement/language/r/R.Rhistory
+R_HELPERS=/home/gabx/.config/r/helpers.R
+R_HISTSIZE=5000
+MYSQL_HOME=/var/lib/mysql
+
+# needed to access github API
+GITHUB_CONSUMER_ID=c866ce2602b402b423bf
+GITHUB_CONSUMER_SECRET=0eb4ccaf15ea860afe109d0f22a0d8c95f8a022b
+
+
+# default package to load at startup
+R_DEFAULT_PACKAGES='datasets,utils,grDevices,graphics,stats,methods,colorout,devtools,ProjectTemplate'
+
