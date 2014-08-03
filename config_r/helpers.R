@@ -1,4 +1,7 @@
-# list of custom functions
+# list of custom functions to source at R start
+# $R_HELPERS
+# $XDG_HOME_CONFIG/r/Rprofile.r @ hortensia                                          
+# Last modified: 2014-08-03
 
 
 DropNA <- function(data, Var, message = TRUE)
