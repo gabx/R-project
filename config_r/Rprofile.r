@@ -52,7 +52,7 @@ if (interactive()) {
 	if(interactive()) try(savehistory("/developement/language/r/R.Rhistory"))
 	file.append("/developement/language/r/R.Rhistory_old","/developement/language/r/R.Rhistory")
 	file.rename("/developement/language/r/R.Rhistory_old","/developement/language/r/R.Rhistory")
-	message("\nGoodbye Gabx ", date(), "\n")
+	cat(paste(c('Goodbye', Sys.info()["user"], date(), sep = ' ')))
 }
 
 
