@@ -21,8 +21,8 @@ source(Sys.getenv('R_HELPERS'))
 ## > options() : list options||style: name=value## 
 options(
 	digits = 12,
-	show.signif.stars=FALSE, 
-	stringsAsFactors=FALSE, 
+	show.signif.stars = FALSE, 
+	stringsAsFactors = FALSE, 
 	# error = quote(dump.frames("${R_HOME_USER}/testdump", TRUE)),
 	repos=c("http://cran.cnr.Berkeley.edu","http://cran.stat.ucla.edu",
             "http://cran.rstudio.com/"),
@@ -30,12 +30,12 @@ options(
 	deparse.max.lines = 2
 )
 
-# session info
+# session info . Make them being hidden
 ## retrive user info
-ThisUser <- paste(c(Sys.info()["user"], '@', Sys.info()["nodename"]), collapse="")
-ThisMachine <- paste(Sys.info()[c ("sysname", "machine", 'release')], 
+.ThisUser <- paste(c(Sys.info()["user"], '@', Sys.info()["nodename"]), collapse="")
+.ThisMachine <- paste(Sys.info()[c ("sysname", "machine", 'release')], 
                       collapse=".")
-ThisR <- sessionInfo()[[1]]$version.string
+.ThisR <- sessionInfo()[[1]]$version.string
 
 
   
@@ -52,7 +52,7 @@ if (interactive()) {
 	if(interactive()) try(savehistory("/developement/language/r/R.Rhistory"))
 	file.append("/developement/language/r/R.Rhistory_old","/developement/language/r/R.Rhistory")
 	file.rename("/developement/language/r/R.Rhistory_old","/developement/language/r/R.Rhistory")
-	cat('Goodbye', Sys.info()["user"], date())
+	cat('Goodbye', Sys.info()["user"], date(),'\n')
 }
 
 

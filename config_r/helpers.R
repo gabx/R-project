@@ -1,8 +1,5 @@
-# list of custom functions to source at R start
-# $R_HELPERS
-# $XDG_HOME_CONFIG/r/Rprofile.r @ hortensia                                          
-# Last modified: 2014-08-03
-
+# list of random custom functions
+##################################
 
 DropNA <- function(data, Var, message = TRUE)
     {
@@ -37,7 +34,7 @@ message(paste(TotalDropped, "rows dropped from the data frame." ))
 return(DataNoNA)
 }
 
- 
+################################3
 rmExcept <- function(keepers, envir = globalenv(), message = TRUE)
     {
     # Remove all objects from a workspace except those specified by the user
@@ -53,6 +50,7 @@ rmExcept <- function(keepers, envir = globalenv(), message = TRUE)
     }
 }
 
+##########################################
 FindReplace <- function(data, Var, replaceData, from = 'from', to = 'to', 
                         exact = TRUE, vector = FALSE)
     {
@@ -83,7 +81,22 @@ FindReplace <- function(data, Var, replaceData, from = 'from', to = 'to',
     return(data)
 }
 
-
+##############################3
 clean <- function()
     {
     rm(list = ls())}
+
+##################################
+getFrom <- function(file, name)
+	{e=new.env();load(file,env=e);e[[name]]}
+
+###############################
+lsFrom <- function(file, all.names = FALSE, pattern)
+	{  e <- new.env()
+  	load(file, envir = e)
+  	ls(e, all.names = all.names, pattern = pattern)
+}
+
+##############################
+
+
