@@ -26,7 +26,7 @@ source(benchmark.R)
 ```
 
 
-## config_r folder
+## config folder
 
 Files in my `~/.config/r` directory
 
