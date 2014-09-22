@@ -11,16 +11,22 @@ library(utils)
 
 cat("Welcome back", Sys.getenv("USER"),"\nworking directory is:", getwd(),'\n')
 
-.First <- function() 
-    {	
-# source helpers
-source(Sys.getenv('R_HELPERS'))
+.First <- function() {
+  if(interactive()){
+    timestamp(,prefix=paste("##------ [",getwd(),"] ",sep=""))
+    cat("Welcome back", Sys.getenv("USER"))
+    source(Sys.getenv('R_HELPERS'))
+  }
 }
+    	
+
 
 # User options 
 ## > options() : list options||style: name=value## 
+# Setting 'scipen=10' effectively forces R to never use scientific notation to express very small or large numbers
 options(
 	digits = 12,
+	scipen = 10,
 	show.signif.stars = FALSE, 
 	stringsAsFactors = FALSE, 
 	# error = quote(dump.frames("${R_HOME_USER}/testdump", TRUE)),
@@ -39,12 +45,17 @@ options(
 
 
   
-# automatically load devtools in interactive sessions
-if (interactive()) {
-  suppressMessages(require(devtools))
+# automatically load silently some packages in interactive sessions
+sshhh <- function(a.package){
+  suppressWarnings(suppressPackageStartupMessages(
+    library(a.package, character.only=TRUE)))
 }
-
-
+ 
+auto.loads <-c("dplyr", "ggplot2", "devtools", "reshape",)
+ 
+if(interactive()){
+  invisible(sapply(auto.loads, sshhh))
+}
 
 
 .Last <- function(){
@@ -56,7 +67,7 @@ if (interactive()) {
 }
 
 
-
+message("\n*** Successfully loaded .Rprofile ***\n")
 
 
 
