@@ -51,7 +51,7 @@ sshhh <- function(a.package){
     library(a.package, character.only=TRUE)))
 }
  
-auto.loads <-c("dplyr", "ggplot2", "devtools", "reshape",)
+auto.loads <-c("dplyr", "ggplot2", "devtools", "reshape")
  
 if(interactive()){
   invisible(sapply(auto.loads, sshhh))
