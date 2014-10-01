@@ -19,7 +19,7 @@ The folowing compiler options have been applied at build time :
 		  rdocdir=/usr/share/doc/R/ \
 		--with-x \
 		--enable-R-shlib \
-		--with-blas="${_mkllibs}" \
+		--with-blas="${mkllibs}" \
 		--with-lapack \
 		F77=gfortran \
 		LIBnn=lib
