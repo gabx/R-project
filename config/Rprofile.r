@@ -1,27 +1,47 @@
 # $R_PROFILE_USER
 # $XDG_HOME_CONFIG/r/Rprofile.r @ hortensia                                          
-# Last modified: 2014-08-03
+# Last modified: 2014-09-29
 
-             
-# customize prompt
-options(prompt=paste(paste (Sys.info () [c ("user", "nodename")], collapse="@"),"[R] "))
+require(utils, quietly = TRUE) 
 
-# load packages
-library(utils)
-
-cat("Welcome back", Sys.getenv("USER"),"\nworking directory is:", getwd(),'\n')
-
-.First <- function() {
-  if(interactive()){
-    timestamp(,prefix=paste("##------ [",getwd(),"] ",sep=""))
-    cat("Welcome back", Sys.getenv("USER"))
-    source(Sys.getenv('R_HELPERS'))
-  }
+#------------ Customize prompt --------------
+if(interactive()){
+	options(prompt=paste(paste (Sys.info () [c ("user", "nodename")], collapse="@"),"[R] "))
 }
-    	
+
+#------------ Helpers ----------
+#' TODO : best approach is to build a package
+#' helper directory is defined in Renviron
+#' http://stackoverflow.com/questions/26118622/r-user-defined-functions-in-new-environment
+#' http://stackoverflow.com/questions/1266279/how-to-organize-large-r-programs
+#' Each helper function is an element of .helperEnv
+# .helperEnv <- new.env(parent = baseenv())
+# .helper.list <- as.list(dir(file.path(path.expand(Sys.getenv('R_HOME_USER')), 
+#''helper')))
 
 
-# User options 
+.helperEnv <- attach(NULL, name = 'helperEnv')
+sys.source(file.path(path.expand(Sys.getenv('R_HOME_USER')), 'helper.R'), .helperEnv)
+
+#------------ First function--------------
+.First <- function() {
+	if(interactive()){
+  		cat("Welcome back", Sys.getenv("USER"),"\nworking directory is:", getwd(),'\n')
+  	}
+}
+
+#------------ Last function--------------
+.Last <- function(){
+
+	if(interactive()) try(savehistory("/developement/language/r/R.Rhistory"))
+	file.append("/developement/language/r/R.Rhistory_old","/developement/language/r/R.Rhistory")
+	file.rename("/developement/language/r/R.Rhistory_old","/developement/language/r/R.Rhistory")
+	cat('Goodbye', Sys.info()["user"], date(),'\n')
+	# write current environment to a file
+	
+}
+
+#------------ Options ----------------------
 ## > options() : list options||style: name=value## 
 # Setting 'scipen=10' effectively forces R to never use scientific notation to express very small or large numbers
 options(
@@ -33,40 +53,32 @@ options(
 	repos=c("http://cran.cnr.Berkeley.edu","http://cran.stat.ucla.edu",
             "http://cran.rstudio.com/"),
 	browserNLdisabled = TRUE,
-	deparse.max.lines = 2
+	deparse.max.lines = 2,
+	editor = 'vim'
 )
 
-# session info . Make them being hidden
-## retrive user info
-.ThisUser <- paste(c(Sys.info()["user"], '@', Sys.info()["nodename"]), collapse="")
-.ThisMachine <- paste(Sys.info()[c ("sysname", "machine", 'release')], 
+
+    	
+
+# ----------- Session info ---------
+# retrive user info
+.thisUser <- paste(c(Sys.info()["user"], '@', Sys.info()["nodename"]), collapse="")
+.thisMachine <- paste(Sys.info()[c ("sysname", "machine", 'release')], 
                       collapse=".")
-.ThisR <- sessionInfo()[[1]]$version.string
+.thisR <- sessionInfo()[[1]]$version.string
 
 
   
-# automatically load silently some packages in interactive sessions
-sshhh <- function(a.package){
-  suppressWarnings(suppressPackageStartupMessages(
-    library(a.package, character.only=TRUE)))
-}
- 
-auto.loads <-c("dplyr", "ggplot2", "devtools", "reshape")
- 
-if(interactive()){
-  invisible(sapply(auto.loads, sshhh))
-}
 
+# ----------- Load silently packages in interactive sessions -------
+suppressWarnings(suppressPackageStartupMessages(
+        library(dplyr)))   
+suppressWarnings(suppressPackageStartupMessages(
+    library(ggplot2))) 
+suppressWarnings(suppressPackageStartupMessages(
+    library(devtools))) 
 
-.Last <- function(){
-
-	if(interactive()) try(savehistory("/developement/language/r/R.Rhistory"))
-	file.append("/developement/language/r/R.Rhistory_old","/developement/language/r/R.Rhistory")
-	file.rename("/developement/language/r/R.Rhistory_old","/developement/language/r/R.Rhistory")
-	cat('Goodbye', Sys.info()["user"], date(),'\n')
-}
-
-
+# ----------- Last --------------------- 
 message("\n*** Successfully loaded .Rprofile ***\n")
 
 
