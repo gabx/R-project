@@ -1,54 +1,50 @@
-r-project
-=========
 
-My R-project stuff
+# Benchmark results#
 
+##System##
 
-## R-mkl 
+R 3.1.1 built with iic/MKL
 
-__R__ built with [Intel MKL library](https://software.intel.com/en-us/intel-mkl) 
-and the _iic_ compiler prooved to be much faster than with _gcc_.
-
-Elapsed time in sec from computing 15 tests with default GCC build and icc/MKL build: 
-
-274.93 sec for _GCC build_, 21.01 sec for _icc/MKL build_. More info in this
-[post](https://stat.ethz.ch/pipermail/r-help/2014-September/421574.html)
-
-
-
-###benchmark.R 
-
-This script is aimed at gauging how fast R is running on your computer. 
+CPU op-mode(s): 32-bit, 64-bit Byte Order: Little Endian CPU(s): 8 Thread(s) per 
+core: 2 Vendor ID: GenuineIntel Model name: Intel(R) Core(TM) i7-2600K CPU @ 3.40GHz
 
 ```
-require(Matrix)
-require(SuppDists)
-source(benchmark.R)
+Number of times each test is run__________________________:  3
+
+   I. Matrix Calculation
+   ----------------------
+
+Creation, transp., deformation of a 2500x2500 matrix (sec):  0.741666666666636 
+2400x2400 normal distributed random matrix ^1000____ (sec):  0.542333333333355 
+Sorting of 7,000,000 random values__________________ (sec):  0.60766666666666 
+2800x2800 cross-product matrix (b = a' * a)_________ (sec):  0.272999999999987 
+Linear regr. over a 3000x3000 matrix (c = a \ b')___ (sec):  0.139666666666699 
+                      --------------------------------------------
+                 Trimmed geom. mean (2 extremes eliminated):  0.448089519716311 
+
+   II. Matrix functions
+   --------------------
+FFT over 2,400,000 random values____________________ (sec):  0.386333333333331 
+Eigenvalues of a 640x640 random matrix______________ (sec):  0.279999999999973 
+Determinant of a 2500x2500 random matrix____________ (sec):  0.242333333333325 
+Cholesky decomposition of a 3000x3000 matrix________ (sec):  0.162999999999973 
+Inverse of a 1600x1600 random matrix________________ (sec):  0.155333333333336 
+                      --------------------------------------------
+                Trimmed geom. mean (2 extremes eliminated):  0.222802262818921 
+
+   III. Programmation
+   ------------------
+3,500,000 Fibonacci numbers calculation (vector calc)(sec):  0.544666666666672 
+Creation of a 3000x3000 Hilbert matrix (matrix calc) (sec):  0.217666666666673 
+Grand common divisors of 400,000 pairs (recursion)__ (sec):  0.839333333333343 
+Creation of a 500x500 Toeplitz matrix (loops)_______ (sec):  0.290333333333365 
+Escoufier's method on a 45x45 matrix (mixed)________ (sec):  0.319999999999936 
+                      --------------------------------------------
+                Trimmed geom. mean (2 extremes eliminated):  0.369878617218732 
+
+
+Total time for all 15 tests_________________________ (sec):  5.74333333333326 
+Overall mean (sum of I, II and III trimmed means/3)_ (sec):  0.33300278809093 
+
+                      --- End of test ---
 ```
-
-
-## config 
-
-A collection fo files in my `~/.config/r` directory on a Archlinux machine. On this machine, most
-program config files are gathered in the `$XDG_HOME_CONFIG` folder.
-
-* Renviron
-
-A very few basic *var:value* lines. 
-
-* Rprofile.R
-
-This file is sourced at R start-up. It has grown and improved over time.
-
-* helper.R
-
-A random collection of short code to help daily work in `R`. To load these functions
-and avoid to pollute top-level namespace, best is to build a `R package` . I prefere
-a lightweight alternative : source the `helper.R` script in a dedicated environment.
-See `?sys.source`, `?new.env` and this [stackoverfolw thread](http://stackoverflow.com/questions/1266279/how-to-organize-large-r-programs)
-for more info.
-
-
-## documentation 
-
-A collection of useful documentations in *.pdf* format . Beginner and advance, french and english.
