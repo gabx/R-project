@@ -3,7 +3,8 @@ r-project
 
 My R-project stuff
 
-## R-mkl folder
+
+## R-mkl 
 
 __R__ built with [Intel MKL library](https://software.intel.com/en-us/intel-mkl) 
 and the _iic_ compiler prooved to be much faster than with _gcc_.
