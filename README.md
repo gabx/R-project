@@ -27,7 +27,7 @@ source(benchmark.R)
 ```
 
 
-## config folder
+## config 
 
 A collection fo files in my `~/.config/r` directory on a Archlinux machine. On this machine, most
 program config files are gathered in the `$XDG_HOME_CONFIG` folder.
@@ -49,6 +49,6 @@ See `?sys.source`, `?new.env` and this [stackoverfolw thread](http://stackoverfl
 for more info.
 
 
-## documentation folder
+## documentation 
 
 A collection of useful documentations in *.pdf* format . Beginner and advance, french and english.
