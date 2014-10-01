@@ -28,13 +28,26 @@ source(benchmark.R)
 
 ## config folder
 
-Files in my `~/.config/r` directory
+A collection fo files in my `~/.config/r` directory on a Archlinux machine. On this machine, most
+program config files are gathered in the `$XDG_HOME_CONFIG` folder.
 
 * Renviron
+
+A very few basic *var:value* lines. 
+
 * Rprofile.R
-* helpers.R
+
+This file is sourced at R start-up. It has grown and improved over time.
+
+* helper.R
+
+A random collection of short code to help daily work in `R`. To load these functions
+and avoid to pollute top-level namespace, best is to build a `R package` . I prefere
+a lightweight alternative : source the `helper.R` script in a dedicated environment.
+See `?sys.source`, `?new.env` and this [stackoverfolw thread](http://stackoverflow.com/questions/1266279/how-to-organize-large-r-programs)
+for more info.
 
 
 ## documentation folder
 
-Collection of useful pdf about R. Beginner and advance, french and english.
+A collection of useful documentations in *.pdf* format . Beginner and advance, french and english.
