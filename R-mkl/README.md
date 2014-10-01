@@ -1,7 +1,7 @@
 
-Benchmark results
+#Benchmark results#
 
-#Operating System#
+##Operating System##
 
 R 3.1.1 built with iic/MKL on [Archlinux](https://www.archlinux.org/) 
 
@@ -36,7 +36,7 @@ export CXXFLAGS="-Wall -Ofast -ipo -funsafe-loop-optimizations -openmp -xHost
 -Wno-fstrict-aliasing -march=native -flto"
 ```
 
-#Hardware#
+##Hardware##
 
 CPU op-mode(s): 32-bit, 64-bit Byte Order: Little Endian CPU(s): 8 Thread(s) per 
 core: 2 Vendor ID: GenuineIntel Model name: Intel(R) Core(TM) i7-2600K CPU @ 3.40GHz
