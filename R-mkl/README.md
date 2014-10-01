@@ -1,9 +1,42 @@
 
-# Benchmark results#
+Benchmark results
 
-##System##
+#Operating System#
 
-R 3.1.1 built with iic/MKL
+R 3.1.1 built with iic/MKL on [Archlinux](https://www.archlinux.org/) 
+
+The folowing compiler options have been applied at build time :
+
+```
+   mkllibs=" -fopenmp -Wl,--no-as-needed -L${_mkllibpath} -l${_intel_lib} 
+   -lmkl_core -lmkl_gnu_thread -ldl -lpthread -lm"
+      ./configure  --prefix=/usr \
+    	--libdir=/usr/lib \
+		--sysconfdir=/etc/R \
+		--datarootdir=/usr/share \
+		  rsharedir=/usr/share/R/ \
+		  rincludedir=/usr/include/R/ \
+		  rdocdir=/usr/share/doc/R/ \
+		--with-x \
+		--enable-R-shlib \
+		--with-blas="${_mkllibs}" \
+		--with-lapack \
+		F77=gfortran \
+		LIBnn=lib
+        
+        
+export CC="icc"
+export CXX="icpc"
+export AR="xiar"
+export LD="xild"
+
+export CFLAGS="-Wall -Ofast -funsafe-loop-optimizations -ipo -openmp -xHost 
+-Wno-fstrict-aliasing"
+export CXXFLAGS="-Wall -Ofast -ipo -funsafe-loop-optimizations -openmp -xHost 
+-Wno-fstrict-aliasing -march=native -flto"
+```
+
+#Hardware#
 
 CPU op-mode(s): 32-bit, 64-bit Byte Order: Little Endian CPU(s): 8 Thread(s) per 
 core: 2 Vendor ID: GenuineIntel Model name: Intel(R) Core(TM) i7-2600K CPU @ 3.40GHz
