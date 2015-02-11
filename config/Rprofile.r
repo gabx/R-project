@@ -50,11 +50,11 @@ options(
 	show.signif.stars = FALSE, 
 	stringsAsFactors = FALSE, 
 	# error = quote(dump.frames("${R_HOME_USER}/testdump", TRUE)),
-	repos=c("http://cran.cnr.Berkeley.edu","http://cran.stat.ucla.edu",
-            "http://cran.rstudio.com/"),
+	repos=list(CRAN="http://cran.cnr.Berkeley.edu"),
 	browserNLdisabled = TRUE,
 	deparse.max.lines = 2,
-	editor = 'vim'
+	editor = 'vim',
+	pager = 'vimrpager'
 )
 
 
@@ -77,6 +77,18 @@ suppressWarnings(suppressPackageStartupMessages(
     library(ggplot2))) 
 suppressWarnings(suppressPackageStartupMessages(
     library(devtools))) 
+suppressWarnings(suppressPackageStartupMessages(
+    library(setwidth))) 
+suppressWarnings(suppressPackageStartupMessages(
+    library(data.table))) 
+# ----------- Vimcom stuff -------------
+# Load the vimcom library only if R was started by Vim:
+ if(Sys.getenv("VIMRPLUGIN_TMPDIR") != ""){
+           library(vimcom)
+           # See R documentation on Vim buffer even if asking for help in R Console:
+           if(Sys.getenv("VIM_PANE") != "")
+               options(help_type = "text", pager = vim.pager)
+}
 
 # ----------- Last --------------------- 
 message("\n*** Successfully loaded .Rprofile ***\n")
