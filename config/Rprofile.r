@@ -51,6 +51,7 @@ options(
 	stringsAsFactors = FALSE, 
 	# error = quote(dump.frames("${R_HOME_USER}/testdump", TRUE)),
 	repos=list(CRAN="http://cran.cnr.Berkeley.edu"),
+	defaultPackages = c('datasets','utils','grDevices','graphics','stats','methods','pryr','data.table','reshape'),
 	browserNLdisabled = TRUE,
 	deparse.max.lines = 2,
 	editor = 'vim',
