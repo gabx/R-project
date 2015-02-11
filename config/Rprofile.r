@@ -81,14 +81,6 @@ suppressWarnings(suppressPackageStartupMessages(
     library(setwidth))) 
 suppressWarnings(suppressPackageStartupMessages(
     library(data.table))) 
-# ----------- Vimcom stuff -------------
-# Load the vimcom library only if R was started by Vim:
- if(Sys.getenv("VIMRPLUGIN_TMPDIR") != ""){
-           library(vimcom)
-           # See R documentation on Vim buffer even if asking for help in R Console:
-           if(Sys.getenv("VIM_PANE") != "")
-               options(help_type = "text", pager = vim.pager)
-}
 
 # ----------- Last --------------------- 
 message("\n*** Successfully loaded .Rprofile ***\n")
