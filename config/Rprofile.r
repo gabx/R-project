@@ -16,18 +16,18 @@ if(interactive()){
 #' http://stackoverflow.com/questions/1266279/how-to-organize-large-r-programs
 #' Each helper function is an element of .helperEnv
 # .helperEnv <- new.env(parent = baseenv())
-# .helper.list <- as.list(dir(file.path(path.expand(Sys.getenv('R_HOME_USER')), 
-#''helper')))
 
 
 .helperEnv <- attach(NULL, name = 'helperEnv')
-sys.source(file.path(path.expand(Sys.getenv('R_HOME_USER')), 'helper.R'), .helperEnv)
+
 
 #------------ First function--------------
 .First <- function() {
 	if(interactive()){
   		cat("Welcome back", Sys.getenv("USER"),"\nworking directory is:", getwd(),'\n')
   	}
+	sapply(list.files(file.path(path.expand(Sys.getenv('R_HOME_USER')),
+	                            'helper'),full.names = T), source, .GlobalEnv)
 }
 
 #------------ Last function--------------
@@ -73,7 +73,7 @@ options(
 
 # ----------- Load silently packages in interactive sessions -------
 suppressWarnings(suppressPackageStartupMessages(
-        library(dplyr)))   
+    library(dplyr)))  
 suppressWarnings(suppressPackageStartupMessages(
     library(ggplot2))) 
 suppressWarnings(suppressPackageStartupMessages(
