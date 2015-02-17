@@ -27,7 +27,7 @@ if(interactive()){
   		cat("Welcome back", Sys.getenv("USER"),"\nworking directory is:", getwd(),'\n')
   	}
 	sapply(list.files(file.path(path.expand(Sys.getenv('R_HOME_USER')),
-	                            'helper'),full.names = T), source, .GlobalEnv)
+	                            'helper'),full.names = T), source, .helperEnv)
 }
 
 #------------ Last function--------------
