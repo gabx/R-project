@@ -42,7 +42,7 @@ if(interactive()){
 }
 
 #------------ Options ----------------------
-## > options() : list options||style: name=value## 
+## > utils::str(options()) : list options||style: name=value## 
 # Setting 'scipen=10' effectively forces R to never use scientific notation to express very small or large numbers
 options(
 	digits = 12,
@@ -82,6 +82,8 @@ suppressWarnings(suppressPackageStartupMessages(
     library(setwidth))) 
 suppressWarnings(suppressPackageStartupMessages(
     library(data.table))) 
+suppressWarnings(suppressPackageStartupMessages(
+    library(slackr))) 
 
 # ----------- Last --------------------- 
 message("\n*** Successfully loaded .Rprofile ***\n")
