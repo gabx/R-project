@@ -1,5 +1,5 @@
 # $R_PROFILE_USER
-# $XDG_HOME_CONFIG/r/Rprofile.r @ hortensia                                          
+# $XDG_CONFIG_HOME/r/Rprofile.r @ hortensia                                          
 # Last modified: 2014-09-29
 
 require(utils, quietly = TRUE) 
