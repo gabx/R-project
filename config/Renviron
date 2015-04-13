@@ -1,5 +1,5 @@
 # $R_ENVIRON_USER
-# $XDG_HOME_CONFIG/r/Renviron                                           
+# $XDG_CONFIG_HOME/r/Renviron                                           
 # Last modified: 2014-05-30
 
 R_HOME_USER=/home/gabx/.config/r
