@@ -1,0 +1,8 @@
+﻿channel: MyChannelName
+username: MyWebhookName
+icon_emoji: 
+token: XXYYXXYYXX
+incoming_webhook_url:  https://hooks.slack.com/services/T029A467A/Webhookuserid/Webhooktoken
+api_token: xoxp-2316142248-3083607128-3429647163-f2f7c4
+
+
