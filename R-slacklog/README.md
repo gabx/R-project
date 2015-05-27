@@ -26,7 +26,7 @@ processed.
 * write a function log.history() with channel, start time, end time as history 
 message arguments
 * connect to Elastic search
-* display/serach results with shiny app
+* display/search results with shiny app
 
 ## Ressources
 ### R and Python
