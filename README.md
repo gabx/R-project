@@ -14,7 +14,30 @@ Elapsed time in sec from computing 15 tests with default GCC build and icc/MKL b
 274.93 sec for _GCC build_, 21.01 sec for _icc/MKL build_. More info in this
 [post](https://stat.ethz.ch/pipermail/r-help/2014-September/421574.html)
 
+### Build R with Intel ICC compiler and MKL
+This is a very basic script to build [R cran](https://cran.r-project.org/) with Intel 2016 Parallel studio shared libraries. The script has to be executed in the source directory.
 
+```
+#! /bin/sh
+
+source /opt/intel/compilers_and_libraries_2016.0.109/linux/mkl/bin/mklvars.sh intel64
+source /opt/intel/bin/compilervars.sh intel64
+
+_icclibpath=/opt/intel/compilers_and_lbraries_2016.0.109/linux/compiler/lib/intel64_lin
+_mkllibpath=${MKLROOT}/lib/intel64_lin
+_omp_lib=/opt/intel/lib/intel64
+
+MKL=" -L${_mkllibpath} -lmkl_rt -lpthread -ls"
+
+export CC="icc"
+export CXX="icpc"
+export AR="xiar"
+export LD="xild"
+export F77="ifort"
+#export FC="ifort"
+
+./configure --with-blas="${MKL}" --with-lapack --enable-R-shlib
+```
 
 ###benchmark.R 
 
