@@ -51,7 +51,7 @@ source(benchmark.R)
 
 ## code
 * Random code from Coursera Data Science
-* R-slacklog: code to fetch history from [Slac](http://www.slack.com) channel; clean, sort and tidy data; store the data in a DB
+* R-slacklog: code to fetch history from [Slack](http://www.slack.com) channel; clean, sort and tidy data; store the data in a DB
 
 ## config 
 A collection fo files in my `~/.config/r` directory on a Archlinux machine. On this machine, most
