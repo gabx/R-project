@@ -36,7 +36,7 @@ export LD="xild"
 export F77="ifort"
 #export FC="ifort"
 
-./configure --with-blas="${MKL}" --with-lapack --enable-R-shlib
+./configure --with-blas="${MKL}" --with-lapack 
 ```
 
 ###benchmark.R 
