@@ -27,7 +27,7 @@ _icclibpath=/opt/intel/compilers_and_lbraries_2016.0.109/linux/compiler/lib/inte
 _mkllibpath=${MKLROOT}/lib/intel64_lin
 _omp_lib=/opt/intel/lib/intel64
 
-MKL=" -L${_mkllibpath} -lmkl_rt -lpthread -ls"
+MKL=" -L${_mkllibpath} -lmkl_rt -lpthread -lm"
 
 export CC="icc"
 export CXX="icpc"
