@@ -26,7 +26,7 @@ source /opt/intel/bin/compilervars.sh intel64
 _icclibpath=/opt/intel/compilers_and_lbraries_2016.0.109/linux/compiler/lib/intel64
 _mkllibpath=${MKLROOT}/lib/intel64
 
-MKL=" -L${_mkllibpath} -lmkl_rt -lpthread -lm"
+MKL=" -L${_mkllibpath} -lmkl_rt -lpthread"
 
 export CC="icc"
 export CXX="icpc"
