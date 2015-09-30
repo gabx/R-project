@@ -33,7 +33,11 @@ export CXX="icpc"
 export AR="xiar"
 export LD="xild"
 export F77="ifort"
-#export FC="ifort"
+
+export CFLAGS="-g -O3 -xHost -I${MKLROOT}/include"
+export CXXFLAGS="-g -O3 -xHost -I${MKLROOT}/include"
+export FFLAGS="-I${MKLROOT}/include"
+export FCFLAGS="-I${MKLROOT}/include"
 
 ./configure --with-blas="${MKL}" --with-lapack 
 ```
