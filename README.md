@@ -40,6 +40,8 @@ export FFLAGS="-I${MKLROOT}/include"
 export FCFLAGS="-I${MKLROOT}/include"
 
 ./configure --with-blas="${MKL}" --with-lapack 
+
+make -j4
 ```
 
 ###benchmark.R 
