@@ -23,7 +23,6 @@ This is a very basic script to build [R cran](https://cran.r-project.org/) with 
 source /opt/intel/compilers_and_libraries_2016.0.109/linux/mkl/bin/mklvars.sh intel64
 source /opt/intel/bin/compilervars.sh intel64
 
-_icclibpath=/opt/intel/compilers_and_lbraries_2016.0.109/linux/compiler/lib/intel64
 _mkllibpath=${MKLROOT}/lib/intel64
 
 MKL=" -L${_mkllibpath} -lmkl_rt -lpthread"
