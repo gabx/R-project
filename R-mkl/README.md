@@ -1,6 +1,9 @@
+#R.spec#
+
+This is the .spce file to build R with Intel Parallel studio 2016 on Fedora 22.
+
 
 #Benchmark results#
-
 ##Operating System##
 
 R 3.1.1 built with iic/MKL on [Archlinux](https://www.archlinux.org/) 
