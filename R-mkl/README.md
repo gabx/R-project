@@ -1,6 +1,6 @@
 #R.spec#
 
-This is the .spce file to build R with Intel Parallel studio 2016 on Fedora 22.
+This is the .spec file to build R with Intel Parallel studio 2016 on Fedora 22.
 
 
 #Benchmark results#
