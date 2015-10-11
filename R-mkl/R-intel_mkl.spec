@@ -3,7 +3,7 @@
 
 Name: R
 Version: 3.2.2
-Release: intel%{?dist}.2
+Release: intel_mkl%{?dist}.2
 Summary: A language for data analysis and graphics
 URL: http://www.r-project.org
 Source0: ftp://cran.r-project.org/pub/R/src/base/R-3/R-%{version}.tar.gz
