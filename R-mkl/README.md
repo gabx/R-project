@@ -2,7 +2,7 @@
 
 This is the **.spec** file to build R with Intel Parallel studio 2016 on Fedora 22.
 
-The file is a variation of the Fedora R meta package maintained by Tom Callaway <spot@fedoraproject.org>.
+The file is a variation of the Fedora [R meta package](http://pkgs.fedoraproject.org/cgit/R.git) maintained by Tom Callaway <spot@fedoraproject.org>.
 Part of the build and install sections have been modified.
 
 The current release, _intel-fc22-1_, may contain some bugs, even if it builds, installs 
