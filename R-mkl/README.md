@@ -1,6 +1,23 @@
 #R.spec#
 
-This is the .spec file to build R with Intel Parallel studio 2016 on Fedora 22.
+This is the **.spec** file to build R with Intel Parallel studio 2016 on Fedora 22.
+
+The file is a variation of the Fedora R meta package maintained by Tom Callaway <spot@fedoraproject.org>.
+Part of the build and install sections have been modified.
+
+The current release, _intel-fc22-1_, may contain some bugs, even if it builds, installs 
+and run fine. A lot of checks are done at build time and they must leave you with a set of working R packages.
+
+##NOTE
+
+* the build is only for Fedora 22
+* the build needs Intel Parallel Studio 2016. In case of older version, path has to be changed
+* `make check-all` is used. It checks lots of package, thus lenghtening seriously build time. 
+To shorten it, please use `make check`
+* for convenience, R config files are gathered in `/etc/R`
+* NO **X** server is configured. Please remove `--without-x` in the `%configure` section
+* R, blas and lapack librairies are all built as shared objects
+
 
 
 #Benchmark results#
