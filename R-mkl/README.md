@@ -1,6 +1,9 @@
 #R.spec#
 
-This is the **.spec** file to build R with Intel Parallel studio 2016 on Fedora 22.
+This is the **.spec** file to build R with Intel Parallel studio 2016 on Fedora 22.It
+allows you to build and install a **.rpm** package for your OS. Please visit [Fedora
+RPM How-To](https://fedoraproject.org/wiki/How_to_create_an_RPM_package#.25files_section)
+for instructions.
 
 The file is a variation of the Fedora [R meta package](http://pkgs.fedoraproject.org/cgit/R.git) maintained by Tom Callaway <spot@fedoraproject.org>.
 Part of the build and install sections have been modified.
