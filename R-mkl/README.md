@@ -13,17 +13,27 @@ and run fine. A lot of checks are done at build time and they must leave you wit
 
 ##NOTE
 
-* the build is only for Fedora 22
+* the build is only for Fedora 22 on X86_64
 * the build needs Intel Parallel Studio 2016. In case of older version, path has to be changed
 * `make check-all` is used. It checks lots of package, thus lenghtening seriously build time. 
 To shorten it, please use `make check`
 * for convenience, R config files are gathered in `/etc/R`
 * NO **X** server is configured. Please remove `--without-x` in the `%configure` section
 * R, blas and lapack librairies are all built as shared objects
+* optimization flags are set. Please visit [Intel Optimization guide](https://software.intel.com/en-us/node/583493)
+for details
 
+##TO DO
+* adapt to Fedora < 22
+* adapt to Intel advisor 2015
+* adapt to use gcc and not ICC if desired
 
 
 #Benchmark results#
+
+They are obtained by running the `benchmark.R` file. The original work can be found
+[here](http://r.research.att.com/benchmarks/).
+
 ##Operating System##
 
 R 3.1.1 built with iic/MKL on [Archlinux](https://www.archlinux.org/) 
