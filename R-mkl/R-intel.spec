@@ -779,10 +779,10 @@ R CMD javareconf \
 %postun -n libRmath-intel -p /sbin/ldconfig
 
 %changelog
-* Fri Oct 16 2015 poisonivy - 3.2.2-2
+* Fri Oct 16 2015 gabx <arnaud.gaboury@gmail.com> - 3.2.2-2
 - change package name to R-intel to prevent dnf to upgrade
 
-* Fri Oct 09 2015 poisonivy - 3.2.2-intel.2
+* Fri Oct 09 2015 gabx <arnaud.gaboury@gmail.com> - 3.2.2-intel.2
 - lot of cleaning
 - first clean version with no errors
 
