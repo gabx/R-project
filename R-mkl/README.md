@@ -8,7 +8,7 @@ for instructions.
 The file is a variation of the Fedora [R meta package](http://pkgs.fedoraproject.org/cgit/R.git) maintained by Tom Callaway <spot@fedoraproject.org>.
 Part of the build and install sections have been modified.
 
-The current release, _intel_mkl-fc22-1_, may contain some bugs, even if it builds, installs 
+The current release, _R-intel-3.2.2-2.fc22.x86_64, may contain some minor bugs, even if it builds, installs 
 and run fine. A lot of checks are done at build time and they must leave you with a set of working R packages.
 
 ##NOTE
