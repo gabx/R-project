@@ -1,4 +1,4 @@
-#R.intel_mkl.spec#
+#R.intel.spec#
 
 This is the **.spec** file to build R with Intel Parallel studio 2016 on Fedora 22.It
 allows you to build and install a **.rpm** package for your OS. Please visit [Fedora
