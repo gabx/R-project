@@ -205,7 +205,7 @@ from the R project.  This package provides the libRmath header files.
 %package -n libRmath-intel-static
 Summary: Static R Standalone math library
 Group: Development/Libraries
-Requires: libRmath-devel-intel = %{version}-%{release}
+Requires: libRmath-intel-devel = %{version}-%{release}
 Conflicts: libRmath-static
 %description -n libRmath-intel-static
 A standalone library of mathematical and statistical functions derived
