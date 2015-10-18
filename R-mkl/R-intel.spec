@@ -139,8 +139,8 @@ R-java-devel if you want this.
 
 %package devel
 Summary: Full R development environment metapackage
-Requires: R-core-devel = %{version}-%{release}
-Requires: R-java-devel = %{version}-%{release}
+Requires: R-intel-core-devel = %{version}-%{release}
+Requires: R-intel-java-devel = %{version}-%{release}
 Conflicts: R-devel
 
 %description devel
@@ -150,7 +150,7 @@ environment.
 %package java
 Summary: R with Fedora provided Java Runtime Environment
 Group: Applications/Engineering
-Requires(post): R-core = %{version}-%{release}
+Requires(post): R-intel-core = %{version}-%{release}
 Requires(post): java-headless
 Conflicts: R-java
 
@@ -172,7 +172,7 @@ Fedora's openJDK.
 %package java-devel
 Summary: Development package for use with Java enabled R components
 Group: Applications/Engineering
-Requires(post): R-core-devel = %{version}-%{release}
+Requires(post): R-intel-core-devel = %{version}-%{release}
 Requires(post): java-devel
 Conflicts: R-java-devel
 
