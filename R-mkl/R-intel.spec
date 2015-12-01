@@ -242,7 +242,7 @@ echo 'R_LIBS_SITE=${R_LIBS_SITE-'"'/usr/local/lib/R/site-library:/usr/local/lib/
 # Setup the environment for MKL and Intel compiler
 source /opt/intel/bin/compilervars.sh intel64
 %global _mkllibpath ${MKLROOT}/lib/intel64/
-%global _icclibpath /opt/intel/compilers_and_libraries_linux/lib/intel64
+%global _icclibpath /opt/intel/compilers_and_libraries/linux/lib/intel64
 
 %define R_PDFVIEWER %{_bindir}/xdg-open
 %define R_PRINTCMD lpr
