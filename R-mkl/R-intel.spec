@@ -94,8 +94,8 @@ Provides: R-survival = 2.38.3
 Provides: R-tcltk = %{version}
 Provides: R-tools = %{version}
 Provides: R-utils = %{version}
-#Provides: libR.so()(64bit)
-#Provides: pkconfig(libR)
+Provides: libR.so()(64bit)
+Provides: pkconfig(libR)
 Conflicts: R-core
 
 %description core
