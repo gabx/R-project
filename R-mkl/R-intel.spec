@@ -3,10 +3,11 @@
 
 Name: R-intel
 Version: 3.2.2
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: A language for data analysis and graphics
 URL: http://www.r-project.org
 Source0: ftp://cran.r-project.org/pub/R/src/base/R-3/R-%{version}.tar.gz
+Source1: R-make-search-index.sh
 License: GPLv2+
 Group: Applications/Engineering
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
@@ -78,7 +79,7 @@ Provides: R-KernSmooth = 2.23.15
 Provides: R-lattice = 0.20.33
 Provides: R-MASS = 7.3.43
 Provides: R-Matrix = 1.2.2
-#Obsoletes: R-Matrix < 0.999375-7
+Obsoletes: R-Matrix < 0.999375-7
 Provides: R-methods = %{version}
 Provides: R-mgcv = 1.8.7
 Provides: R-nlme = 3.1.121
@@ -93,6 +94,8 @@ Provides: R-survival = 2.38.3
 Provides: R-tcltk = %{version}
 Provides: R-tools = %{version}
 Provides: R-utils = %{version}
+#Provides: libR.so()(64bit)
+#Provides: pkconfig(libR)
 Conflicts: R-core
 
 %description core
@@ -111,7 +114,7 @@ and called at run time.
 %package core-devel
 Summary: Core files for development of R packages (no Java)
 Group: Applications/Engineering
-Requires: R-core = %{version}-%{release}
+Requires: R-intel-core = %{version}-%{release}
 # You need all the BuildRequires for the development version
 Requires: gcc-c++, gcc-gfortran, tex(latex), texinfo, texinfo-tex
 Requires: bzip2-devel, pcre-devel, zlib-devel
@@ -242,7 +245,7 @@ echo 'R_LIBS_SITE=${R_LIBS_SITE-'"'/usr/local/lib/R/site-library:/usr/local/lib/
 # Setup the environment for MKL and Intel compiler
 source /opt/intel/bin/compilervars.sh intel64
 %global _mkllibpath ${MKLROOT}/lib/intel64/
-%global _icclibpath /opt/intel/compilers_and_libraries/linux/lib/intel64
+%global _icclibpath /opt/intel/compilers_and_libraries_linux/lib/intel64
 
 %define R_PDFVIEWER %{_bindir}/xdg-open
 %define R_PRINTCMD lpr
@@ -284,6 +287,7 @@ export FCFLAGS="-O3 -ipo -wd188 -qopenmp -qopt-mem-layout-trans=3 -xHost -I${MKL
     rincludedir=%{_includedir}/R \
     rsharedir=%{_datadir}/R \
 > CONFIGURE.log
+cat CONFIGURE.log | grep -A30 'R is now' - > CAPABILITIES
 
 make %{?_smp_mflags}
 make %{?_smp_mflags} MAKEINFO=texi2any pdf
@@ -302,6 +306,8 @@ make DESTDIR=%{buildroot} install-pdf
 make DESTDIR=%{buildroot} install-tests 
 
 rm -f %{buildroot}%{_infodir}/dir
+#mkdir -p %{buildroot}%{?_pkgdocdir}%{!?_pkgdocdir:%{_docdir}/R-%{version}}
+#install -p CAPABILITIES %{buildroot}%{?_pkgdocdir}%{!?_pkgdocdir:%{_docdir}/R-%{version}}
 
 # install libRmath.so
 (cd src/nmath/standalone; make install DESTDIR=%{buildroot})
@@ -310,6 +316,11 @@ mkdir -p %{buildroot}/etc/ld.so.conf.d
 echo "%{_libdir}/R/lib" > %{buildroot}/etc/ld.so.conf.d/R-x86_64.conf
   
 mkdir -p %{buildroot}%{_datadir}/R/library
+
+
+# Install rpm helper script
+mkdir -p %{buildroot}/usr/lib/rpm
+install -m0755 %{SOURCE1} %{buildroot}/usr/lib/rpm
   
 # Fixup R wrapper scripts.
 sed -i "s|%{buildroot} ||" "%{buildroot}/usr/bin/R"
@@ -317,6 +328,9 @@ rm "%{buildroot}/usr/lib64/R/bin/R"
 cd "%{buildroot}/usr/lib64/R/bin"
 ln -s ../../../bin/R
 
+# Fix multilib
+#touch README %{buildroot}%{_datadir}doc/R/manual/*.pdf
+#touch README %{buildroot}%{_bindir}/R
 
 # Fix html/packages.html
 # We can safely use RHOME here, because all of these are system packages.
@@ -354,12 +368,11 @@ popd
 %check
 # uncommand/command below lines to make a basic check
 # make check
-make check-all
+#make check-all
 
 %files
 # Metapackage
 %files core
-%defattr(-, root, root, -)
 %{_bindir}/R
 %{_bindir}/Rscript
 %{_datadir}/R/
@@ -374,7 +387,9 @@ make check-all
 %{_libdir}/R/etc/javaconf
 %{_libdir}/R/etc/ldpaths
 %{_libdir}/R/etc/repositories
-%{_libdir}/R/lib/
+%{_libdir}/R/lib/libR.so
+%{_libdir}/R/lib/libRlapack.so
+%{_libdir}/R/lib/libRblas.so
 %dir %{_libdir}/R/library/
 %dir %{_libdir}/R/library/translations/
 %{_libdir}/R/library/translations/DESCRIPTION
@@ -680,10 +695,13 @@ make check-all
 %{_libdir}/R/library/utils/
 %{_libdir}/R/modules
 %{_libdir}/R/COPYING
+#%%{_libdir}/R/NEWS*
 %{_libdir}/R/SVN-REVISION
+/usr/lib/rpm/R-make-search-index.sh
 %{_infodir}/R-*.info*
 %{_mandir}/man1/*
 %{_defaultdocdir}/R/*
+#%%docdir %{?_pkgdocdir}%{!?_pkgdocdir:%{_docdir}/%{name}-%{version}}
 /etc/ld.so.conf.d/*
 %config %{_sysconfdir}/*
 
@@ -779,8 +797,8 @@ R CMD javareconf \
 %postun -n libRmath-intel -p /sbin/ldconfig
 
 %changelog
-* Fri Oct 16 2015 gabx <arnaud.gaboury@gmail.com> - 3.2.2-2
-- change package name to R-intel to prevent dnf to upgrade
+* Tue Dec 08 2015 gabx <arnaud.gaboury@gmail.com> - 3.2.2-intel.3
+- fix package as the libR.so provider
 
 * Fri Oct 09 2015 gabx <arnaud.gaboury@gmail.com> - 3.2.2-intel.2
 - lot of cleaning
