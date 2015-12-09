@@ -43,6 +43,9 @@ export FCFLAGS="-I${MKLROOT}/include"
 make -j4
 ```
 
+#### Build for Fedora x86_64
+Use the ```R-mkl/R-intel.spec``` file as a template to build a **.rpm** package for **FEDORA x86_64** >= 22.
+
 ###benchmark.R 
 
 This script is aimed at gauging how fast R is running on your computer. 
@@ -52,6 +55,8 @@ require(Matrix)
 require(SuppDists)
 source(benchmark.R)
 ```
+## R-studio-server
+Use the ```R-studio-server/rstudio-server.spec``` file as a template to build a **.rpm** package for **FEDORA x86_64** >= 22.
 
 ## code
 * Random code from Coursera Data Science
