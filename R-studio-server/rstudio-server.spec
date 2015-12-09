@@ -70,7 +70,7 @@ mkdir -p %{buildroot}/var/www/rstudio-server
 cp -R %{buildroot}/usr/lib64/rstudio-server/www/* %{buildroot}/var/www/rstudio-server
 rm -rf %{buildroot}/usr/lib64/rstudio-server/extras
 mkdir -p %{buildroot}/etc/systemd/system
-install -Dm 644 %{_sourcedir}/rstudio-server.service %{buildroot}/etc/systemd/rstudio-server.service
+install -Dm 644 %{_sourcedir}/rstudio-server.service %{buildroot}/etc/systemd/system/rstudio-server.service
 mkdir -p %{buildroot}/etc/rstudio
 
 %check
