@@ -1,6 +1,6 @@
 #R-intel.spec#
 
-This is the **.spec** file to build R with Intel Parallel studio 2016 on Fedora 22.It
+This is the **.spec** file to build R with Intel Parallel studio 2016 on Fedora 23.It
 allows you to build and install a **.rpm** package for your OS. Please visit [Fedora
 RPM How-To](https://fedoraproject.org/wiki/How_to_create_an_RPM_package#.25files_section)
 for instructions.
@@ -8,12 +8,12 @@ for instructions.
 The file is a variation of the Fedora [R meta package](http://pkgs.fedoraproject.org/cgit/R.git) maintained by Tom Callaway <spot@fedoraproject.org>.
 Part of the build and install sections have been modified.
 
-The current release, _R-intel-3.2.2-2.fc22.x86_64_, may contain some minor bugs, even if it builds, installs 
+The current release, _R-intel-3.2.2-3.fc23.x86_64_, may contain some minor bugs, even if it builds, installs 
 and run fine. A lot of checks are done at build time and they must leave you with a set of working R packages.
 
 ##NOTE
 
-* the build is only for Fedora 22 on X86_64
+* the build is only for Fedora >= 22 on X86_64
 * the build needs Intel Parallel Studio 2016. In case of older version, path has to be changed
 * `make check-all` is used. It checks lots of package, thus lenghtening seriously build time. 
 To shorten it, please use `make check`
