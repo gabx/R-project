@@ -1,10 +1,9 @@
 # $R_ENVIRON_USER
 # $XDG_CONFIG_HOME/r/Renviron                                           
-# Last modified: 2015.10.11
+# Last modified: 2015.12.19
 
 R_HOME_USER=/developement/language/r
-R_LIBS_USER=/developement/language/r/library
-R_LIBS=/developement/language/r/library:/usr/lib/R/library
+R_LIBS_USER=${R_HOME_USER}/library
 R_HISTFILE=/developement/language/r/R.Rhistory
 R_HELPER=/home/gabx/.config/r/helper
 R_HISTSIZE=5000
