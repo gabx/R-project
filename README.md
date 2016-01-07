@@ -3,6 +3,34 @@ r-project
 
 My R-project stuff
 
+## littler
+[http://dirk.eddelbuettel.com/code/littler.html]{littler} provides a simplified command line to R. This allows direct execution of commands.
+
+### install littler
+install littler using the R cran package:
+```
+R> install.packages('littler')
+```
+
+### configure
+The binary **r** has been installed in ```$R_LIBS_USER/littler/bin```. Create symbolic link
+to ```/usr/local/bin/r``` and alias in zsh cconfig as **r** is a built-in command in zsh.
+
+### run
+Example of small script to upgrade R packages outside any R session:
+
+```
+#!/usr/bin/env r 
+#
+# a simple example to update packages 
+# parameters are easily adjustable
+
+repos <- "http://cran.us.r-project.org"
+
+lib.loc <- "/developement/language/r/library"
+
+update.packages(repos=repos, ask=FALSE, lib.loc=lib.loc)
+```
 
 ## R-mkl 
 
