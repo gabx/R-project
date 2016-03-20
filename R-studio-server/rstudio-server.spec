@@ -1,11 +1,11 @@
-%define java_arch amd64
+%global java_arch amd64
 
 Name: rstudio-server
-Version: 0.99.800
+Version: 0.99.845
 Release: 1%{?dist}
 Summary: Rstudio Server lets you access Rstudio from anywhere using a web browser
 URL: http://www.rstudio.com
-Source0: github.com/rstudio/rstudio/archive/v%{version}.tar.gz
+Source0: https://github.com/rstudio/rstudio/archive/v%{version}.tar.gz
 Source1: rstudio-server.service
 License: AGPLv3
 Group: Applications/Editors
@@ -25,9 +25,7 @@ BuildRequires: libuuid-devel
 Requires: R-intel-core >= 2.11.1
 Requires: util-linux
 Requires: boost >= 1.5
-# rstudio pandoc are broken
-#Requires: pandoc
-#Requires: pandoc-citeproc
+
 
 %description
 Rstudio is a powerful IDE and productive user interface for R. It is free
@@ -73,6 +71,7 @@ mkdir -p %{buildroot}/etc/systemd/system
 install -Dm 644 %{_sourcedir}/rstudio-server.service %{buildroot}/etc/systemd/system/rstudio-server.service
 mkdir -p %{buildroot}/etc/rstudio
 
+
 %check
 # uncommand/command below lines to make a basic check
 # make check
@@ -85,14 +84,37 @@ mkdir -p %{buildroot}/etc/rstudio
 
 %post
 /sbin/ldconfig
-# Fix broken rstudio pandoc
-rm /usr/lib64/rstudio-server/bin/pandoc/pandoc
-rm /usr/lib64/rstudio-server/bin/pandoc/pandoc-citeproc
-ln -s /usr/bin/pandoc /usr/lib64/rstudio-server/bin/pandoc/pandoc
-ln -s /usr/bin/pandoc-citeproc /usr/lib64/rstudio-server/bin/pandoc/pandoc-citeproc
+getent passwd "rstudio-server" &>/dev/null || useradd -r -U rstudio-server -d "/usr/lib/rstudio-server/www/" -s "/bin/sh" rstudio 1>/dev/null
+chown -R rstudio-server:rstudio-server /usr/lib64/rstudio-server/www/
+ln -s /usr/lib64/rstudio-server/bin/rserver /usr/bin/rserver
+ln -s /usr/lib64/rstudio-server/bin/rstudio-server /usr/bin/rstudio-server
+mkdir -p /var/run/rstudio-server
+mkdir -p /var/lock/rstudio-server
+mkdir -p /var/log/rstudio-server
+mkdir -p /var/lib/rstudio-server
 
+%postun
+/sbin/ldconfig
+if getent passwd "rstudio" >/dev/null; then
+    userdel rstudio >/dev/null
+fi
+if getent group "rstudio" >/dev/null; then
+    groupdel rstudio >/dev/null
+fi
 
+  rm -f /usr/sbin/rstudio-server
+  rm -f /usr/bin/rserver
+  
+  rm -rf /var/run/rstudio-server
+  rm -rf /var/lock/rstudio-server
+  rm -rf /var/log/rstudio-server
+  rm -rf /var/lib/rstudio-server
 %changelog
+* Thu Jan 07 2016 gabx <arnaud.gaboury@gmail.com> - rstudio-server-0.99.845
+- symlink binaries to /usr/bin
+- use rstudio pandoc
+- mkdir /var/{run,lock,log,lib}
+
 * Thu Sep 17 2015 gabx <arnaud.gaboury@gmail.com> - rstudio-server-0.99.800
 - Initial release for rstudio-server
 
