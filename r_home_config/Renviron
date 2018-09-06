@@ -1,0 +1,19 @@
+# $R_ENVIRON_USER
+# $XDG_CONFIG_HOME/r/Renviron                                           
+# Last modified: 2015-12-19
+
+
+R_HOME_USER='/developement/language/r'
+#R_PROFILE_USER=${XDG_CONFIG_HOME}/r/Renviron
+R_LIBS_USER=${R_HOME_USER}/library
+R_HISTFILE=/developement/language/r/R.Rhistory
+R_HELPER=/home/gabx/.config/r/helper
+R_HISTSIZE=5000
+MYSQL_HOME=/var/lib/mysql
+XDG_HOME_CONFIG=/home/gabx/.config
+
+# needed to access github API
+GITHUB_CONSUMER_ID=c866ce2602b402b423bf
+GITHUB_CONSUMER_SECRET=0eb4ccaf15ea860afe109d0f22a0d8c95f8a022b
+
+
