@@ -13,7 +13,6 @@ MYSQL_HOME=/var/lib/mysql
 XDG_HOME_CONFIG=/home/gabx/.config
 
 # needed to access github API
-GITHUB_CONSUMER_ID=c866ce2602b402b423bf
-GITHUB_CONSUMER_SECRET=0eb4ccaf15ea860afe109d0f22a0d8c95f8a022b
+
 
 
